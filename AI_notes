@@ -1,1 +1,648 @@
+# AI Usage Documentation
+## Customer Targeting Model Assignment - ITNPBD6
 
+**Student:** Aparajita Singh  
+**Student Number:** 3539316  
+**Assignment:** Machine Learning Customer Targeting Model  
+**Date:** December 2025  
+**AI Tools Used:** Claude.ai, Manus.ai
+
+---
+
+## Purpose of This Document
+
+This document provides a transparent account of how AI tools were used throughout this assignment, in compliance with the University of Stirling's Academic Integrity Assessment Scale (AIAS) guidelines. All AI-generated content was critically evaluated, modified, and verified before inclusion.
+
+---
+
+## Overview of AI Usage
+
+### Primary AI Tools
+1. **Claude.ai** - Used for debugging, code suggestions, conceptual understanding, and README formatting
+2. **Manus.ai** - Used for initial code structure and syntax verification
+
+### Usage Summary
+- **Percentage of AI assistance:** ~30% (primarily debugging, explanation, and formatting)
+- **Percentage of original work:** ~70% (model design, implementation, testing, analysis)
+- **All code was tested, understood, and verified by me before submission**
+
+---
+
+## Detailed AI Usage Log
+
+### 1. Initial Project Setup & Understanding
+**What I Used AI For:**
+- Understanding the assignment requirements after reading course materials
+- Clarifying what "customer targeting model" meant in practical terms
+- Getting examples of similar classification problems
+
+**Prompts Used:**
+```
+"Explain what a customer targeting model does in marketing"
+"What's the difference between classification and regression in this context?"
+"How do I structure a machine learning project in Python?"
+"What is expected in ITNPBD6 machine learning assignment?"
+```
+
+**How I Used the Output:**
+- Read through explanations to understand the business problem
+- Compared AI explanations with lecture notes
+- Used understanding to plan my approach
+- **Did NOT copy code directly** - just used for conceptual clarity
+
+**My Original Decisions:**
+- Chose to implement 4 different models (Random Forest, XGBoost, kNN, Neural Network)
+- Decided on 60/20/20 train/val/test split
+- Selected ROC-AUC as primary metric
+
+---
+
+### 2. Data Preprocessing
+**What I Used AI For:**
+- Understanding how to handle categorical variables
+- Deciding whether to drop high-cardinality features
+- Clarifying one-hot encoding vs label encoding
+- Syntax for sklearn preprocessing pipelines
+
+**Prompts Used:**
+```
+"Should I drop a feature with 101 unique values in a dataset of 50,000 rows?"
+"Explain one-hot encoding and when to use it"
+"How do I handle imbalanced datasets in classification?"
+"What's the syntax for ColumnTransformer in sklearn?"
+```
+
+**How I Used the Output:**
+- Understood the reasoning behind feature selection
+- Learned about different encoding methods
+- Made my own decision to drop 'town' feature based on this understanding
+- **Wrote all preprocessing code myself** after understanding concepts
+
+**What I Modified:**
+- AI suggested keeping town with label encoding - I decided to drop it instead
+- AI recommended standardization - I applied this to my specific numerical features
+- Chose my own train/val/test split ratios (60/20/20)
+- Decided independently which features were numeric vs categorical
+
+---
+
+### 3. Model Implementation
+**What I Used AI For:**
+- Syntax questions about sklearn pipeline structure
+- Understanding hyperparameter options for each model
+- Learning how to implement SMOTE for imbalanced data
+- How to use RandomizedSearchCV
+
+**Prompts Used:**
+```
+"What hyperparameters should I tune for Random Forest?"
+"How do I use SMOTE with sklearn pipeline?"
+"Explain the difference between class_weight and SMOTE"
+"What's the syntax for RandomizedSearchCV?"
+"How to create separate preprocessing pipelines for different models?"
+```
+
+**How I Used the Output:**
+- Learned about hyperparameter options
+- Understood SMOTE implementation
+- Got syntax examples for pipelines
+- **Wrote my own model configurations** based on my dataset
+
+**What I Modified:**
+- AI suggested GridSearchCV - I chose RandomizedSearchCV for speed (computational constraints)
+- AI gave generic hyperparameter ranges - I adjusted based on my laptop's limits
+- Created my own parameter distributions
+- Decided independently to use different class imbalance strategies for different models:
+  - Class weighting for Random Forest & XGBoost
+  - SMOTE for kNN
+- Made the decision to create separate preprocessors for each model (AI suggested shared preprocessor)
+
+---
+
+### 4. Neural Network Implementation (The 15-Hour Saga)
+**What I Used AI For:**
+- Debugging KerasClassifier errors (EXTENSIVELY)
+- Understanding scikeras wrapper requirements
+- Trying different approaches to fix the "model must be a callable" error
+- Multiple attempts at different implementation strategies
+
+**Prompts Used (over 15 hours, ~50+ prompts):**
+```
+"How to use KerasClassifier with RandomizedSearchCV?"
+"TypeError: model must be a callable - how to fix?"
+"Alternative ways to implement neural network with sklearn pipeline"
+"Why is my NeuralNetworkBuilder class not working?"
+"Best practices for neural network hyperparameter tuning"
+"How to pass parameters to KerasClassifier model function?"
+"How to create a callable model for scikeras?"
+"Why does my neural network crash during cross-validation?"
+"Different ways to wrap Keras models for sklearn compatibility"
+"Is there an alternative to KerasClassifier?"
+```
+
+**How I Used the Output:**
+- Tried AI-suggested fixes (Custom class, different wrapper approaches)
+- Attempted multiple implementations based on suggestions
+- Debugged for 15 hours across 12 code runs
+- **Eventually gave up** and focused on working models
+
+**What I Modified/Attempted:**
+1. Created my own NeuralNetworkBuilder class (Run #1-3: didn't work)
+2. Modified AI suggestions for wrapper approaches (Run #4-6: still failed)
+3. Changed parameter structures (Run #7-9: nope)
+4. Tried different Keras/TensorFlow versions (Run #10: still broken)
+5. Rewrote entire implementation from scratch (Run #11: gave up)
+6. One final desperate attempt with completely different approach (Run #12: accepted defeat)
+
+**Key Learning:**
+- Not everything AI suggests will work
+- Sometimes you need to know when to cut your losses
+- Three working models > three working models + one broken one
+- **This was MY decision** to abandon the Neural Network after exhausting options
+
+**Time Breakdown:**
+- Hours 1-5: Trying AI suggestions for KerasClassifier
+- Hours 6-10: Debugging custom implementations
+- Hours 11-13: Desperate troubleshooting with AI help
+- Hours 14-15: Acceptance and moving on
+
+---
+
+### 5. Model Evaluation & Metrics
+**What I Used AI For:**
+- Understanding different evaluation metrics
+- Clarifying when to use ROC-AUC vs accuracy
+- Learning how to interpret confusion matrices
+- Understanding precision-recall trade-offs
+
+**Prompts Used:**
+```
+"Why is ROC-AUC better than accuracy for imbalanced data?"
+"How do I interpret precision vs recall trade-offs?"
+"What does specificity mean in business context?"
+"How to calculate and interpret confusion matrix?"
+"What's a good ROC-AUC score?"
+```
+
+**How I Used the Output:**
+- Understood why ROC-AUC is appropriate for imbalanced data
+- Learned to interpret my results
+- **Wrote my own analysis** of model performance
+- Made independent decisions about model selection
+
+**What I Modified:**
+- AI gave generic metric explanations - I applied them to my specific results
+- Created my own business impact analysis (saving marketing costs, conversion rates)
+- Wrote my own interpretation of the confusion matrix
+- Made the decision to select Random Forest based on highest validation ROC-AUC
+
+---
+
+### 6. Visualization & Reporting
+**What I Used AI For:**
+- Matplotlib syntax questions
+- Best practices for presenting ML results
+- How to create multi-plot figures
+- Color scheme suggestions
+
+**Prompts Used:**
+```
+"How to create subplots in matplotlib?"
+"Best way to visualize ROC curves for multiple models"
+"How to save figures in high resolution?"
+"How to create a confusion matrix heatmap with seaborn?"
+```
+
+**How I Used the Output:**
+- Learned matplotlib syntax
+- Got ideas for visualization layout
+- **Created my own visualizations** based on my results
+
+**What I Modified:**
+- AI suggested basic plots - I created comprehensive multi-plot figure
+- Chose my own color scheme and styling
+- Added my own annotations and labels
+- Made design decisions based on what would be clearest for my results
+
+---
+
+### 7. Code Comments & Documentation
+**What I Used AI For:**
+- Suggestions for what to include in comments
+- Help with explaining complex sections
+- Grammar/clarity for some technical descriptions
+
+**Prompts Used:**
+```
+"What should I document in a preprocessing pipeline?"
+"How to write clear comments for model selection logic?"
+"Help me explain what SMOTE does in simple terms"
+```
+
+**How I Used the Output:**
+- Got ideas for documentation structure
+- Used for some technical explanations
+- **Added my own personality and humor** to all comments
+- All the witty/funny comments are 100% mine
+
+**Examples of My Original Comments:**
+- "PREPROCESSED OR PREPOSSESSED!!!!!......I'M SLEEP DEPRIVED"
+- "All packages installed successfully!"
+- "hurraayy ig!!!!!"
+- "my laptop was already crying"
+- All exclamation marks and enthusiasm are authentically mine
+- All sleep deprivation jokes are from personal experience
+
+---
+
+### 8. README File Creation
+**What I Used AI For:**
+- Structure and formatting suggestions
+- Professional README best practices
+- Making it more engaging while keeping technical accuracy
+- Help organizing my thoughts into clear sections
+
+**Prompts Used:**
+```
+"What should be in a machine learning project README?"
+"Make this README more witty and sound like me"
+"Add my Neural Network struggle story to the README"
+"How to structure an academic integrity statement?"
+"Suggest improvements to make README more engaging"
+"Help me organize this content better"
+```
+
+**How I Used the Output:**
+- Got structural template for README
+- AI helped format my story and experiences
+- **All content is based on my actual work and results**
+- All personality, humor, and experiences are mine
+
+**What I Modified:**
+- AI gave generic README structure - I personalized extensively
+- Added my own humor and commentary throughout:
+  - "the sacred dataset"
+  - "the 'leave me alone' crowd"
+  - "my laptop has feelings too"
+  - "XGBoost is a diva sometimes"
+  - All these personality touches are mine
+- Wrote my own Neural Network saga details (AI just helped format it)
+- Created my own "Timeline of Emotions"
+- All technical content and results are from my actual implementation
+
+---
+
+### 9. AI Usage Documentation (This Document)
+**What I Used AI For:**
+- Structure and formatting
+- Making sure I covered all required elements
+- Organization of thoughts
+
+**Prompts Used:**
+```
+"What should be in an AI usage documentation for university?"
+"Help me organize my AI usage notes"
+"What does AIAS Level 3 require for AI disclosure?"
+```
+
+**How I Used the Output:**
+- Got template for documentation structure
+- Ensured compliance with university guidelines
+- **All actual usage details are honest and accurate**
+
+**What's Original:**
+- All specific prompts I used
+- All descriptions of how I modified AI outputs
+- All reflections on what worked/didn't work
+- Timeline and emotional journey with Neural Network
+- Honest assessment of AI limitations
+
+---
+
+## Critical Evaluation Process
+
+### How I Verified AI-Generated Content:
+
+1. **Code Verification:**
+   - Ran every piece of code to ensure it worked
+   - Tested on my actual dataset (wallacecommunications.csv)
+   - Debugged and fixed any errors
+   - Made sure I understood what each line does
+   - Could explain the purpose of every function and parameter
+
+2. **Conceptual Understanding:**
+   - Never used code I didn't understand
+   - Researched concepts in official documentation when unclear
+   - Could explain every model choice if asked
+   - Understood trade-offs and limitations
+   - Can defend all design decisions
+
+3. **Modification & Personalization:**
+   - Adapted all suggestions to my specific needs
+   - Made independent decisions on model parameters
+   - Created my own analysis and interpretations
+   - Added my personality and style throughout
+   - Made judgment calls when AI suggestions didn't fit
+
+4. **Testing:**
+   - Validated all code outputs
+   - Checked results made sense statistically
+   - Compared different approaches
+   - Debugged extensively (especially Neural Network - 15 hours!)
+   - Verified model performance on validation and test sets
+
+---
+
+## What I Did NOT Use AI For
+
+### Independent Work:
+1. **Model Selection Decisions:**
+   - Chose which models to compare (Random Forest, XGBoost, kNN, Neural Network)
+   - Decided on hyperparameter ranges based on my computational constraints
+   - Selected final model (Random Forest) based on validation results
+   - Made trade-off decisions (precision vs recall for business context)
+
+2. **Data Analysis:**
+   - Explored dataset characteristics
+   - Decided which features to drop (ID, town)
+   - Analyzed class imbalance (1:4.12 ratio)
+   - Interpreted results and business impact
+   - Created confusion matrix interpretation
+
+3. **Problem-Solving:**
+   - Figured out why town had 101 values (high cardinality issue)
+   - Decided on 60/20/20 split strategy
+   - Chose different imbalance strategies for different models
+   - Made the call to abandon Neural Network after 15 hours
+   - Decided on RandomizedSearchCV over GridSearchCV
+
+4. **Testing & Validation:**
+   - Ran all experiments myself (12 runs just for Neural Network!)
+   - Tested different configurations
+   - Validated results on separate test set
+   - Created visualizations from my results
+   - Analyzed feature importances
+
+5. **Critical Thinking:**
+   - Evaluated model performance
+   - Understood trade-offs (high precision but moderate recall)
+   - Made business recommendations
+   - Identified limitations and future improvements
+   - Wrote honest reflection on challenges
+
+6. **Personal Experiences:**
+   - The 15-hour Neural Network debugging saga (all me, unfortunately)
+   - Sleep deprivation commentary (very real)
+   - Emotional timeline (genuine frustration and acceptance)
+   - All humor and witty remarks
+   - Crying sessions with best friends (mentioned in README)
+
+---
+
+## AI Limitations Encountered
+
+### Where AI Was NOT Helpful:
+
+1. **Neural Network Debugging:**
+   - AI suggested multiple fixes - **NONE worked**
+   - Over 50 prompts, 15 hours, 12 code runs - still failed
+   - Couldn't solve the KerasClassifier compatibility issue
+   - Had to make my own decision to abandon it
+   - **This was the biggest lesson in knowing when to stop**
+
+2. **Dataset-Specific Decisions:**
+   - AI couldn't tell me if my specific town feature should be dropped
+   - Had to analyze my own data distribution
+   - Made my own feature engineering choices
+   - Decided independently on handling the 4:1 class imbalance
+
+3. **Model Performance Analysis:**
+   - AI gave generic interpretations
+   - I had to analyze my specific confusion matrix (7,930 TN, 1,111 TP, etc.)
+   - Business impact analysis was my own
+   - Trade-off assessment (precision vs recall) was based on my understanding
+
+4. **Debugging Unique Errors:**
+   - Some errors were specific to my Colab setup
+   - AI suggestions didn't always apply to my environment
+   - Had to figure things out through trial and error
+   - Stack Overflow was sometimes more helpful than AI
+
+5. **Making Judgment Calls:**
+   - When to give up on Neural Network
+   - Which model to select as final (Random Forest)
+   - How to interpret results in business context
+   - What level of recall is acceptable
+
+---
+
+## Skills Demonstrated
+
+### What This Assignment Taught Me:
+
+1. **Technical Skills:**
+   - Implementing multiple ML algorithms from scratch
+   - Handling imbalanced datasets (class weighting, SMOTE)
+   - Hyperparameter tuning with RandomizedSearchCV
+   - Model evaluation and comparison
+   - Creating comprehensive visualizations
+   - Working with sklearn pipelines
+
+2. **Problem-Solving:**
+   - Debugging complex errors (15 hours on Neural Network!)
+   - Knowing when to pivot (abandon Neural Network)
+   - Making data-driven decisions
+   - Balancing multiple objectives (accuracy, precision, recall)
+   - Working within computational constraints
+
+3. **Critical Thinking:**
+   - Evaluating AI suggestions critically
+   - Understanding when AI is wrong or not applicable
+   - Making independent decisions despite AI recommendations
+   - Interpreting results in business context
+   - Identifying model limitations
+
+4. **Persistence & Resilience:**
+   - 15 hours debugging Neural Network
+   - 12 code runs attempting different fixes
+   - Not giving up on the project despite setbacks
+   - Focusing on what works rather than what's trendy
+   - Learning from failure
+
+5. **Academic Integrity:**
+   - Transparent documentation of AI usage
+   - Honest about what worked and what didn't
+   - Critical evaluation of all AI suggestions
+   - Taking ownership of decisions and results
+
+---
+
+## Honest Reflection
+
+### What Went Well:
+- Successfully implemented 3 different ML models (Random Forest, XGBoost, kNN)
+- Achieved strong performance (ROC-AUC: 0.9005 on test set)
+- Made good decisions about feature selection (dropping town)
+- Created comprehensive documentation and visualizations
+- Used AI as a learning tool effectively
+- Honest and transparent about struggles
+
+### What Was Challenging:
+- Neural Network implementation was a complete disaster (15 hours wasted)
+- Took way longer than expected (especially those 15 hours on NN)
+- Balancing AI help with original work
+- Knowing when to ask for help vs figure it out myself
+- Managing computational constraints (laptop limitations)
+- Deciding when to give up on something (Neural Network)
+
+### What I'd Do Differently:
+- Start with simpler models first (I did this right!)
+- Set a time limit for debugging (should have given up on NN at hour 10)
+- Maybe ask professor about Neural Network issues earlier
+- Document AI usage as I went (instead of reconstructing later)
+- Test code more incrementally rather than running full pipelines
+- Be more strategic about which AI suggestions to try
+
+### What I Learned About AI Tools:
+- AI is great for syntax and conceptual understanding
+- AI struggles with debugging environment-specific issues
+- AI can't make strategic decisions for you
+- AI doesn't know your specific constraints (time, computational)
+- Critical evaluation of AI suggestions is essential
+- Sometimes the "cool" solution (Neural Network) isn't the best solution
+
+---
+
+## Time Investment Breakdown
+
+**Total Time Spent:** ~45 hours
+
+**Breakdown:**
+- Data exploration & preprocessing: ~6 hours
+- Model implementation (RF, XGBoost, kNN): ~8 hours
+- Neural Network debugging saga: **15 hours** (ouch)
+- Model evaluation & comparison: ~4 hours
+- Visualization creation: ~4 hours
+- README documentation: ~5 hours
+- AI usage documentation: ~3 hours
+
+**AI Interaction Time:** ~12 hours total
+- Conceptual questions: ~2 hours
+- Debugging assistance: ~6 hours (mostly Neural Network)
+- Documentation help: ~4 hours
+
+**Independent Work Time:** ~33 hours
+- Actual coding and testing: ~20 hours
+- Analysis and interpretation: ~8 hours
+- Writing and documentation: ~5 hours
+
+---
+
+## Compliance Statement
+
+This AI usage documentation is submitted in compliance with:
+- University of Stirling Academic Integrity policies
+- AIAS (Academic Integrity Assessment Scale) guidelines
+- Course-specific requirements for ITNPBD6
+
+**I confirm that:**
+- All AI usage has been disclosed honestly in this document
+- All code was tested and understood before submission
+- Results are based on my own implementation and analysis
+- I can explain and defend all aspects of this work
+- The final model and conclusions are my own
+- I could recreate this project without AI assistance because I understand every component
+- The Neural Network failure is documented honestly (even though it's embarrassing)
+
+**I understand that:**
+- Using AI without disclosure would be academic misconduct
+- All AI-assisted work must demonstrate my understanding
+- I am responsible for the accuracy of submitted work
+- I must be able to explain any code or concepts in my submission
+
+---
+
+## Evidence of Understanding
+
+### Questions I Can Answer:
+
+1. **Why did you choose Random Forest over XGBoost?**
+   - Higher validation ROC-AUC (0.8996 vs 0.8806)
+   - More interpretable feature importances
+   - Better generalization to test set
+   - Less prone to overfitting
+
+2. **Why drop the town feature?**
+   - 101 unique values would create 100+ one-hot encoded columns
+   - Risk of overfitting
+   - Computational cost too high
+   - Country feature (5 categories) retains geographic information
+
+3. **Why use ROC-AUC instead of accuracy?**
+   - Dataset is imbalanced (80% no, 20% yes)
+   - Accuracy can be misleading with imbalanced data
+   - ROC-AUC measures discrimination ability across all thresholds
+   - More appropriate for business decision-making
+
+4. **What does your confusion matrix tell you?**
+   - High specificity (97.3%) - excellent at identifying who won't sign
+   - Moderate recall (56.11%) - miss about 44% of potential customers
+   - High precision (83.28%) - when we predict yes, usually correct
+   - Trade-off favors precision over recall - better for targeted campaigns
+
+5. **Why did the Neural Network fail?**
+   - KerasClassifier wrapper had compatibility issues with RandomizedSearchCV
+   - Scikeras requires specific callable format that I couldn't get working
+   - Multiple implementation attempts all failed
+   - After 15 hours and 12 runs, decided to focus on working models
+
+---
+
+## Final Reflection
+
+### Key Takeaways:
+
+1. **AI is a Tool, Not a Solution:**
+   - AI helps with syntax and concepts
+   - But YOU make the decisions
+   - YOU are responsible for understanding
+   - Critical evaluation is essential
+
+2. **Failure is Part of Learning:**
+   - Neural Network didn't work despite 15 hours of effort
+   - That's okay - learned a lot from the struggle
+   - Knowing when to stop is a valuable skill
+   - Three good models > four mediocre models
+
+3. **Documentation Matters:**
+   - Transparent AI usage builds trust
+   - Honest reflection shows growth
+   - Clear documentation helps others learn
+   - Academic integrity is non-negotiable
+
+4. **Understanding > Completion:**
+   - Better to deeply understand 3 models than superficially know 4
+   - AI can generate code, but understanding comes from YOU
+   - Being able to explain decisions is more important than having code that runs
+   - Real learning happens when things go wrong (hello, Neural Network)
+
+### Personal Growth:
+
+This assignment taught me more than just machine learning. It taught me:
+- How to use AI responsibly and ethically
+- When to persist and when to pivot
+- How to document my work transparently
+- The importance of understanding over just "getting it done"
+- That failure (Neural Network) is a learning opportunity
+- How to balance efficiency (using AI) with integrity (understanding everything)
+
+The 15 hours spent on the Neural Network weren't wasted - they taught me persistence, problem-solving, and most importantly, when to cut my losses and focus on what works.
+
+---
+
+*Document Created: December 2025*  
+*Last Updated: December 2025*  
+
+**Note:** This document itself was partially formatted with AI assistance (Claude.ai) for structure and organization, but all content about my actual AI usage, experiences, struggles, and reflections is honest and accurate. The Neural Network struggle was painfully real. The 15 hours happened. The 12 code runs happened. The tears may or may not have happened. The learning definitely happened. 😅
+
+**Final Word:** If you're reading this as part of grading, please know that every word in this documentation is truthful. I used AI, I struggled, I learned, and I can defend every decision in this project. The Neural Network may have defeated me, but I still got a 0.9005 ROC-AUC with Random Forest, so I'm calling it a win. 
