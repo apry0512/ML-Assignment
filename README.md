@@ -408,5 +408,5 @@ This project is submitted as academic coursework for ITNPBD6 and is subject to U
 
 *Last Updated: December 2024*  
 *Created with: Python, scikit-learn, caffeine, determination, and a concerning amount of time staring at confusion matrices*  
-*Special thanks to: My laptop for not catching fire during those 12 Neural Network runs, Stack Overflow for existing (even when it couldn't help), and Random Forest for being the real MVP when the Neural Network betrayed me* 🌲🏆  
-*In Memoriam: Neural Network implementation (attempted Dec 2024 - abandoned Dec 2024, after 15 hours of struggle). You will not be missed.* 💀
+*Special thanks to: My laptop for not catching fire during those 12 Neural Network runs, Stack Overflow for existing (even when it couldn't help), and Random Forest for being the real MVP when the Neural Network betrayed me*   
+*In Memoriam: Neural Network implementation (attempted Dec 2024 - abandoned Dec 2025, after 15 hours of struggle). You will not be missed.* �
