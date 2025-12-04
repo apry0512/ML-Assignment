@@ -406,7 +406,7 @@ All AI-generated suggestions were:
 This project is submitted as academic coursework for ITNPBD6 and is subject to University of Stirling's academic policies and regulations. In other words: don't plagiarize, folks. Do your own work. You'll learn more and sleep better at night.
 
 
-*Last Updated: December 2024*  
+*Last Updated: December 2025*  
 *Created with: Python, scikit-learn, caffeine, determination, and a concerning amount of time staring at confusion matrices*  
 *Special thanks to: My laptop for not catching fire during those 12 Neural Network runs, Stack Overflow for existing (even when it couldn't help), and Random Forest for being the real MVP when the Neural Network betrayed me*   
-*In Memoriam: Neural Network implementation (attempted Dec 2024 - abandoned Dec 2025, after 15 hours of struggle). You will not be missed.* �
+*In Memoriam: Neural Network implementation (attempted Nov 2025 - abandoned Dec 2025, after 15 hours of struggle). You will not be missed.*
