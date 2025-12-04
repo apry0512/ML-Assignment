@@ -1,17 +1,13 @@
-AI Usage Documentation
-Customer Targeting Model Assignment - ITNPBD6
-Student: Aparajita Singh Student Number: 3539316 Assignment: Machine Learning Customer Targeting Model Date: December 2025 AI Tools Used: Claude.ai, Manus.ai
-
-
-  	  
-
+# AI Usage Documentation
+## Customer Targeting Model Assignment - ITNPBD6 
+## Student: Aparajita Singh  
+## Student Number: 3539316  
+Assignment: Machine Learning Customer Targeting Model
+Date: 04 December 2025 
+## AI Tools Used: Claude.ai, Manus.ai
 
 Why This File Exists
 Just keeping it honest: this is a straight-up record of how I used AI during this assignment, since Stirling cares (rightly) about these things. Everything I got from AI was questioned, tweaked, or outright ignored if it didn’t make sense.
-
-
-  	  
-
 
 How I Used AI
 Main AI Tools
@@ -20,11 +16,7 @@ Main AI Tools
 The Math-y Breakdown
 • About 30% of the final product was influenced by AI – mostly for debugging, explanations, and formatting.
 • The rest (70%) is me: picking models, writing code, testing, and doing analysis. Every line of code was pain-tested by me.
-
-
   	  
-
-
 The Play-by-Play
 1. Setting Up & Figuring Stuff Out
 AI Used For:
@@ -34,13 +26,10 @@ Actual Prompts:
 • What’s a customer targeting model for marketing?
 • Difference between classification and regression here?
 • How do I even structure a machine learning project in Python?
+
 How I Used It:
 • Used explanations from AI to draft my approach – but coded everything from scratch
 • Stuff like train/validate/test split and the main metric (ROC-AUC) came from my own judgment
-
-
-  	  
-
 
 2. Data Preprocessing
 AI Used For:
@@ -50,13 +39,10 @@ Actual Prompts:
 • Should I drop big cardinality columns?
 • One-hot vs label encoding—real difference?
 • Example code for sklearn’s preprocessing pipelines?
+
 What I Changed:
 • AI suggested label encoding town, but I thought that would be messy—so I left it out
 • Used my own splits and decided what counts as “numeric” for my project
-
-
-  	  
-
 
 3. Model Building
 AI Used For:
@@ -66,13 +52,10 @@ Actual Prompts:
 • Which Random Forest parameters are worth tuning?
 • How does SMOTE plug into pipelines?
 • GridSearchCV vs RandomizedSearchCV: fight!
+
 How I Used It:
 • Opted for RandomizedSearchCV on my own—faster and easier on my laptop
 • Made each model its own preprocessor, which AI said wasn’t “standard” but kept my results cleaner
-
-
-  	  
-
 
 4. The Neural Network Disaster (A True Story)
 AI Used For:
@@ -85,10 +68,6 @@ The Reality:
 • 15 hours, 12 attempts, maybe three cups of tea too late—still didn’t work
 • AI suggested and re-suggested. None of it worked in my setup. I cut my losses and focused on the models that did their job without drama (Random Forest, XGBoost, kNN)
 
-
-  	  
-
-
 5. Metrics & Evaluation
 AI Used For:
 • Unpacking the million ways to calculate “success” (ROC-AUC vs accuracy, confusion matrices, etc)
@@ -99,10 +78,6 @@ But:
 • My application to my own data/outputs was unique
 • Wrote and explained all analysis myself
 
-
-  	  
-
-
 6. Visuals & Plots
 AI Used For:
 • Getting started with matplotlib syntax, subplots, saving figures
@@ -111,10 +86,6 @@ My Edits:
 • Ignored the boring suggestions and made more useful comparison visuals instead
 • Created most annotations, labels, and framework from scratch
 
-
-  	  
-
-
 7. Writing & Comments
 AI Used For:
 • Got ideas for good commenting practices on pipelines and model selection
@@ -122,19 +93,11 @@ AI Used For:
 Completely Me:
 • All the exclamations, caffeine jokes, and late-night “what am I doing” commentary are legit from my experience. No AI needed for the drama.
 
-
-  	  
-
-
 8. README and Documentation
 AI Used For:
 • Used some structure/section templates suggested by AI
 But:
 • Filled in my own stories, jokes, “Neural Network saga,” and honest wins/losses
-
-
-  	  
-
 
 9. AI Usage Notes (This Document)
 AI Used For:
@@ -142,19 +105,11 @@ AI Used For:
 But:
 • The struggles, lesson learned, and everything I wrote in “what worked/what didn’t” are mine
 
-
-  	  
-
-
 How I Vet and Edit AI Outputs
 • Never pasted a block of code without running it myself at least once
 • Always figured out what it was doing—and, honestly, rewrote sections when they didn’t make sense
 • Checked every weird fix against the actual dataset and project structure
 • Tweaked comments, variable names, and pretty much anything to match my workflow
-
-
-  	  
-
 
 Where AI Wasn’t Helpful (and what I had to do myself)
 • Debugging the Neural Network—seriously, AI wasted as much of my time as my own mistakes here
@@ -163,19 +118,11 @@ Where AI Wasn’t Helpful (and what I had to do myself)
 • Sorting out Colab environment quirks and wonky errors
 • Deciding where recall vs precision produced meaningful business results
 
-
-  	  
-
-
 What I Learned (And Stuff That Was Actually Hard)
 • Implementing the three models that worked, and figuring out the “why” for every choice
 • The value of failure: 15 hours didn’t create a neural net, but I definitely learned what NOT to do
 • The importance of documenting as I went (which I will definitely do earlier next time)
 • The difference between copying code and understanding what’s up
-
-
-  	  
-
 
 Investment (Time, Sanity, Coffee)
 • About 45 hours, give or take (15 on the neural net, which still hurts)
@@ -184,16 +131,8 @@ Investment (Time, Sanity, Coffee)
 • Actual code/testing/analysis: ~33 hours
 • Writing, annotation, documentation: ~8 hours
 
-
-  	  
-
-
 The Compliance Bit
 This file (and the whole assignment) was put together to align with Stirling’s Academic Integrity policies and everything AIAS Level 3 requires. I’ve told the full truth about where AI did/didn’t help—and every result, figure, and commentary is based on my actual work.
-
-
-  	  
-
 
 Can I Defend My Work?
 Yes. If you ask me:
@@ -202,10 +141,6 @@ Yes. If you ask me:
 • Why precision > recall for this business problem: don’t want to waste resources chasing low-probability leads
 • What went wrong with neural nets: KerasClassifier drama (see above for the breakdown)
 • General model evaluation: I can explain my metrics, confusion matrix, and business impacts without referencing any outside notes
-
-
-  	  
-
 
 Final Thoughts
 AI gave me ideas, fixed some bugs, and explained things—but the hustle, debugging, project choices, and lessons (especially the painful ones) are all me. I can defend every decision, and I actually learned more from what didn’t work than what did.
